@@ -1,0 +1,20 @@
+{
+  "name": "kuzzle-plugin-graphql",
+  "author": "The Kuzzle Team <support@kuzzle.io>",
+  "version": "1.1.1",
+  "description": "Kuzzle plugin boilerplate template",
+  "main": "lib/index.js",
+  "keywords": [
+    "kuzzle",
+    "plugin",
+    "template"
+  ],
+  "license": "Apache-2.0",
+  "devDependencies": {},
+  "dependencies": {
+    "graphql": "^14.1.1",
+    "graphql-tools": "^4.0.4",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0"
+  }
+}

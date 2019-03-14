@@ -1,0 +1,14 @@
+type Driver {
+  name: String!
+  license: String!
+  age: Int
+}
+
+type Query {
+  # drivers(): [Driver]
+  driver(name: String!): Driver
+}
+
+schema {
+  query: Query
+}
