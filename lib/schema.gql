@@ -1,14 +1,28 @@
-type Driver {
+type Book {
+  id: ID!
   name: String!
-  license: String!
-  age: Int
+  likes: Int
+}
+
+type Author {
+  id: ID!
+  name: String!
+  books: [Book]
 }
 
 type Query {
-  # drivers(): [Driver]
-  driver(name: String!): Driver
+  book(id: ID!): Book
+  allBooks: [Book]
+  author(name: String!): Author
+  allAuthors: [Author]
+}
+
+type Mutation {
+  createBook(id: ID!, name: String!, authorId: ID!): Book!
+  likeBook(id: ID!): Book!
 }
 
 schema {
   query: Query
+  mutation: Mutation
 }
