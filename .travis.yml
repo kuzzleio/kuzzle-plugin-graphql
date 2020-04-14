@@ -11,7 +11,7 @@ jobs:
           - node_modules
 
       install:
-        - npm install --silent --unsafe-perm --only=dev
+        - npm install --silent --unsafe-perm
 
       script:
         - bash features/run-kuzzle-stack.sh
