@@ -32,13 +32,8 @@ services:
     image: redis:5
 
   elasticsearch:
-    image: kuzzleio/elasticsearch:7
+    image: kuzzleio/elasticsearch:7.4.0
     ports:
       - '9200:9200'
     ulimits:
       nofile: 65536
-    environment:
-      - 'ES_JAVA_OPTS=-Xms512m -Xmx512m'
-      - node.name=alyx
-      - cluster.name=kuzzle
-      - discovery.type=single-node
