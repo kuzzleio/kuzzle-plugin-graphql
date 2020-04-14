@@ -3,7 +3,7 @@ jobs:
     - stage: Tests
       name: 'Kuzzle GraphQL Plugin Tests'
       language: node_js
-      node_js: 10
+      node_js: 12
       cache:
         directories:
           - ~/.npm
