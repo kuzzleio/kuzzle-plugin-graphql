@@ -30,7 +30,7 @@
     "should": "^13.2.3"
   },
   "dependencies": {
-    "graphql": "^14.1.1",
-    "graphql-tools": "^4.0.4"
+    "graphql": "^15.0.0",
+    "graphql-tools": "^5.0.0"
   }
 }
