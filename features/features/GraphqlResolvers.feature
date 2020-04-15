@@ -85,6 +85,18 @@ Feature: GraphQL Resolvers
         {"data":{"author":{"id":"rowly","name":"J.K. Rowling","books":[{"name":"Harry Potter"}]}}}
         """
 
+    Scenario: Correctly fail when asking for a non-existent author
+        When I successfully call the GraphQL endpoint with the following body:
+        """
+        {
+            "query": "{author(name: \"J.K.\") {id, name, books{name}}}"
+        }
+        """
+        Then the response should be:
+        """
+        {"errors":[{"message":"Couldn't find an author with name J.K.","locations":[{"line":1,"column":2}],"path":["author"]}],"data":{"author":null}}
+        """
+
     Scenario: Modify a book's "likes" counter
         When I successfully call the GraphQL endpoint with the following body:
         """
