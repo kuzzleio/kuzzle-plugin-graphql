@@ -1,7 +1,7 @@
 'use strict';
 
-const { setWorldConstructor } = require('cucumber'),
-  { Kuzzle, WebSocket } = require('kuzzle-sdk');
+const { setWorldConstructor } = require('cucumber');
+const { Kuzzle, WebSocket } = require('kuzzle-sdk');
 
 class KuzzleWorld {
   constructor(attach, parameters) {

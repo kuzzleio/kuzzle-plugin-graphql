@@ -1,10 +1,10 @@
 'use strict';
 
-const { After, Before, BeforeAll } = require('cucumber'),
-  testMappings = require('./fixtures/mappings'),
-  testSecurities = require('./fixtures/securities'),
-  testFixtures = require('./fixtures/fixtures'),
-  World = require('./world');
+const { After, Before, BeforeAll } = require('cucumber');
+const testMappings = require('./fixtures/mappings');
+const testSecurities = require('./fixtures/securities');
+const testFixtures = require('./fixtures/fixtures');
+const World = require('./world');
 
 BeforeAll({ timeout: 10 * 1000 }, async function () {
   const world = new World({});
