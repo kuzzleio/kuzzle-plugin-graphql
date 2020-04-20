@@ -1,19 +1,18 @@
-group: edge
+jobs:
+  include:
+    - stage: Tests
+      name: Kuzzle GraphQL Plugin Tests
+      language: node_js
+      node_js: 12
+      cache:
+        directories:
+          - ~/.npm
+          - ~/.cache
+          - node_modules
 
-services:
-  - docker
+      install:
+        - npm install --silent --unsafe-perm
 
-on:
-  branch: master
-
-env:
-  global:
-  - DOCKER_COMPOSE_VERSION=1.21.0
-
-before_install:
-  - sudo sysctl -w vm.max_map_count=262144
-  - sudo sysctl -w fs.inotify.max_user_watches=524288
-
-script:
-  # Run tests
-  - npm install --unsafe-perm && npm test
+      script:
+        - bash features/run-kuzzle-stack.sh
+        - npm test
