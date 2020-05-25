@@ -3,11 +3,9 @@ version: '3'
 services:
   kuzzle:
     image: kuzzleio/plugin-dev:2
-    command: /run-dev.sh
+    command: bash -c "prepare && /run-dev.sh"
     volumes:
       - './docker/run-dev.sh:/run-dev.sh'
-      - './docker/install-plugins.sh:/install-plugins.sh'
-      - './docker/pm2.json:/config/pm2.json'
       - '.:/var/app/plugins/enabled/kuzzle-plugin-graphql'
     cap_add:
       - SYS_PTRACE
